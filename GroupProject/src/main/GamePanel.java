@@ -29,12 +29,12 @@ public class GamePanel extends JPanel implements Runnable {
 	Player player = new Player(this,keyH);
 	
 
-	// set player's default position
-	int playerX = 100;
-	int playerY = 100;
-	int playerSpeed = 4;
+//	// set player's default position
+//	int playerX = 100;
+//	int playerY = 100;  no longer needed as its been moved name changed to x and y and speed
+//	int playerSpeed = 4;
 
-	public GamePanel() {
+	public GamePanel() {  //default constructor
 		this.setPreferredSize(new Dimension(screenWidth, screenHeight));// gonna have to look up this
 		this.setBackground(Color.black);
 		this.setDoubleBuffered(true); // if set to true, all drawing from this component will be done in an off screen

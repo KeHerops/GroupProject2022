@@ -10,7 +10,7 @@ public class Main {
 		JFrame window = new JFrame(); // creating a window using the JFRAME class.
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // This is to allow closing when pressing the x
 		window.setResizable(false); // we're not allowing to resize I believe to keep the tiles consistent
-		window.setTitle("2D Adventure"); // name of window
+		window.setTitle("2D Adventure of blue hair boy"); // name of window
 
 		GamePanel gamePanel = new GamePanel();
 		window.add(gamePanel);
