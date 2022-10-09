@@ -26,7 +26,7 @@ public class GroupProjectClass	{
 		
 		for(int i=0; i<5;i++)
 		{
-			System.out.printf("you will be healed for %d", Potions.getBasicHealthPotion() );
+			System.out.printf("you will be healed for %d\n", Potions.getBasicHealthPotion() );
 			p.healed(Potions.getBasicHealthPotion());
 			System.out.printf("Name: %s, Health: %d\n", p.getName(),p.getHealth());
 
