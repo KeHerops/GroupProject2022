@@ -1,9 +1,10 @@
 package groupprojectpackage;
 
-public class Entity {
+public class Entity extends GroupProjectClass{
 	private String name;
 	private int health;
 	private int maxHealth;
+	private int attackValue;
 	
 	public String getName() {
 		return name;
@@ -25,6 +26,8 @@ public class Entity {
 	}
 	public void damaged(int damage) {
 		health-=damage;
+		if(health<=0)
+			System.out.println(name+" ded");
 	}
 	public void healed(int heal) {
 		if(health<0)
@@ -34,6 +37,14 @@ public class Entity {
 			health=maxHealth;
 		
 	}
+	public int getAttackValue() {
+		return attackValue;
+	}
+	public void setAttackValue(int attackValue) {
+		this.attackValue = attackValue;
+	}
+	
+	
 	
 	
 }

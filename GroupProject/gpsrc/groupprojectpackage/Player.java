@@ -7,6 +7,12 @@ public class Player extends Entity {
 		setName(name);
 		setHealth(health);
 		setMaxHealth(health);
+		setAttackValue(6);
 		
+	}
+	
+	public void playerAttack(Object enemy) {
+		System.out.println("You attacks!");
+		((Entity) enemy).damaged(getAttackValue());
 	}
 }
