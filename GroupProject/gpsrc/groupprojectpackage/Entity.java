@@ -1,11 +1,12 @@
 package groupprojectpackage;
 
 public class Entity extends GroupProjectClass{
+	
 	private String name;
 	private int health;
 	private int maxHealth;
 	private int attackValue;
-	
+	private boolean isDead = false;
 	public String getName() {
 		return name;
 	}
@@ -26,8 +27,10 @@ public class Entity extends GroupProjectClass{
 	}
 	public void damaged(int damage) {
 		health-=damage;
-		if(health<=0)
+		if(health<=0) {
 			System.out.println(name+" ded");
+			isDead=true;
+		}
 	}
 	public void healed(int heal) {
 		if(health<0)
@@ -44,7 +47,15 @@ public class Entity extends GroupProjectClass{
 		this.attackValue = attackValue;
 	}
 	
-	
+	public void gethit(Object e) {
+		damaged(((Entity) e).getAttackValue());
+	}
+	public boolean isDead() {
+		return isDead;
+	}
+	public void setDead(boolean isDead) {
+		this.isDead = isDead;
+	}
 	
 	
 }

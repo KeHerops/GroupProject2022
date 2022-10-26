@@ -1,5 +1,7 @@
 package groupprojectpackage;
 
+import java.util.Scanner;
+
 public class GroupProjectClass {
 
 	public static void main(String[] args) {
@@ -11,41 +13,49 @@ public class GroupProjectClass {
 //		}
 		Player p = new Player("Kevin", (generateInt(10, 20)));
 		System.out.printf("Name: %s, Health: %d\n", p.getName(), p.getHealth());
-		while (c == true) {
-			int s = generateInt(0, 10);
-			System.out.println("You will be hit for " + (s + 1) + " damage");
-			p.damaged(s + 1);
-			// System.out.printf("Name: %s, Health: %d\n", p.getName(),p.getHealth());
-			if (p.getHealth() <= 0)
-				c = false;
-		}
-
-		for (int i = 0; i < 5; i++) {
-
-			Potions.setHealingValue(generateInt(1, 10));
-			System.out.printf("heal for %d\n", Potions.getHealingValue());
-
-			p.healed(Potions.getHealingValue());
-			System.out.printf("Name: %s, Health: %d\n", p.getName(), p.getHealth());
-			if (p.getHealth() >= p.getMaxHealth()) {
-
-				System.out.println(i + 1 + "-Number of times healed");
-				break;
-			}
-		}
+//		while (c == true) {
+//			int s = generateInt(0, 10);
+//			System.out.println("You will be hit for " + (s + 1) + " damage");
+//			p.damaged(s + 1);
+//			// System.out.printf("Name: %s, Health: %d\n", p.getName(),p.getHealth());
+//			if (p.getHealth() <= 0)
+//				c = false;
+//		}
+//
+//		for (int i = 0; i < 5; i++) {
+//
+//			System.out.printf("heal for %d with %s\n", Potions.getBasicHealthPotionValue(), Potions.getBhp());
+//
+//			p.healed(Potions.getBasicHealthPotionValue());
+//			System.out.printf("Name: %s, Health: %d\n", p.getName(), p.getHealth());
+//			if (p.getHealth() >= p.getMaxHealth()) {
+//
+//				System.out.println(i + 1 + "-Number of times healed");
+//				break;
+//			}
+//		}
 		Monster enemy = new Monster("Dragon");
-		enemy.monsterTurn(p);
-		enemy.monsterTurn(p);
-		enemy.monsterTurn(p);
-		enemy.monsterTurn(p);
-		p.playerAttack(enemy);
-		p.playerAttack(enemy);
+//		enemy.monsterTurn(p);
+//		enemy.monsterTurn(p);
+//		enemy.monsterTurn(p);
+//		enemy.monsterTurn(p);
+//		p.playerAttack(enemy);
+//		System.out.println(enemy.getHealth());
+//
+//		p.playerAttack(enemy);
+//		System.out.println(enemy.getHealth());
+//
+//		p.playerAttack(enemy);
+//		System.out.println(enemy.getHealth());
+//
+//		p.playerAttack(enemy);
+//		System.out.println(enemy.getHealth());
+//
+//		p.playerAttack(enemy);
+//		System.out.println(enemy.getHealth());
 
-		p.playerAttack(enemy);
-
-		p.playerAttack(enemy);
-
-		p.playerAttack(enemy);
+		BattleSystem.Battle(p,enemy);
+		
 
 	}
 

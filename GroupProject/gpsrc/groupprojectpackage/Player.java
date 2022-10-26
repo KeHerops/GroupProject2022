@@ -11,8 +11,7 @@ public class Player extends Entity {
 		
 	}
 	
-	public void playerAttack(Object enemy) {
-		System.out.println("You attacks!");
-		((Entity) enemy).damaged(getAttackValue());
+	public void playerAttack(Monster enemy) {
+		 enemy.damaged(getAttackValue());
 	}
 }

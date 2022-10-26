@@ -17,8 +17,7 @@ public class Monster extends Entity {
 
 	}
 	
-	public void monsterTurn(Object player) {
-		System.out.println("The Monster attacks!");
-		((Entity) player).damaged(getAttackValue());
+	public void monsterTurn(Player player) {
+		player.damaged(getAttackValue());
 	}
 }

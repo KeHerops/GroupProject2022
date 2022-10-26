@@ -1,29 +1,22 @@
 package groupprojectpackage;
 
 public class Potions {
-	private static int basicHealthPotion=5;
-	private static int greaterHealthPotion=10;
-	private static int healingValue;
+	private static int basicHealthPotionValue=5;
+	
 	private static String bhp="Basic Health Potion";
-	private static String ghp="Greater Health Potion";
-	private static String castHeal="Heal";
 	
 	
 	
 	private Potions() {	}
 
-	public static int getBasicHealthPotion() {
-		return basicHealthPotion;
+	public static int getBasicHealthPotionValue() {
+		return basicHealthPotionValue;
 	}
 
-	public static int getHealingValue() {
-		return healingValue;
+	public static String getBhp() {
+		return bhp;
 	}
 
-	public static void setHealingValue(int healingvalue) {
-		healingValue = healingvalue;
-	}
-	
 	
 
 }
