@@ -15,7 +15,7 @@ public class GroupProjectClass {
 		
 		//healing player
 		while(p.getHealth()!=p.getMaxHealth()) {
-			System.out.println("Healing player with "+ Potions.getBhp()+" for "+Potions.getBasicHealthPotionValue());
+			System.out.println("Healing player with "+ Potions.getBHP()+" for "+Potions.getBasicHealthPotionValue());
 			p.healed(Potions.getBasicHealthPotionValue());
 			temp++;
 		}

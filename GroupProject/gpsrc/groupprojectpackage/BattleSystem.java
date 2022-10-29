@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class BattleSystem {
 
-	static void Battle(Player player, Monster monster) {
+	public static void Battle(Player player, Monster monster) {
 
 		switch (generateInt(0, 1)) {
 		case (0):
@@ -48,7 +48,7 @@ public class BattleSystem {
 	}
 
 	// player's actions
-	static void playerTurn(Player player, Monster monster) {
+	public static void playerTurn(Player player, Monster monster) {
 		int choice = playerBattleOptions();
 		switch (choice) {
 		case 1:
@@ -67,7 +67,7 @@ public class BattleSystem {
 	}
 
 	// enemy's actions
-	static void enemyTurn(Player player, Monster monster) {
+	public static void enemyTurn(Player player, Monster monster) {
 		System.out.println(monster.getName() + " chose to attack...");
 		if (generateInt(0, 1) == 0) {
 			System.out.println(
@@ -78,7 +78,7 @@ public class BattleSystem {
 	}
 
 	// battle menu options for player on player turn
-	static int playerBattleOptions() {
+	public static int playerBattleOptions() {
 		int choice;
 		Scanner sc = new Scanner(System.in);
 		System.out.println("What will you do?\n1.Attack\n2.Run away\nChoice: ");

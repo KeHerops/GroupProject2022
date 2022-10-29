@@ -12,7 +12,7 @@ public class Potions {
 		return basicHealthPotionValue;
 	}
 
-	public static String getBhp() {
+	public static String getBHP() {
 		return bhp;
 	}
 
