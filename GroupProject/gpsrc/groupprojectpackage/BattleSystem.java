@@ -19,7 +19,6 @@ public class BattleSystem {
 
 				if (player.isDead() || monster.isDead())
 					break;
-
 			}
 			break;
 		case (1):
