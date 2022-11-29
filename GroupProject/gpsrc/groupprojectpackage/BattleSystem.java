@@ -30,7 +30,7 @@ public class BattleSystem {
 				if (player.isDead() || monster.isDead())
 					break;
 				playerTurn(player, monster);
-				System.out.println("Player: " + player.getHealth() + "\nEnemy: " + monster.getHealth());
+				System.out.println("Player: " + player.getHealth() + "\n"+monster.getName()+":" + monster.getHealth());
 				if (player.isDead() || monster.isDead())
 					break;
 
@@ -43,8 +43,29 @@ public class BattleSystem {
 		}
 	}
 
+	// enemy's actions
+	public static void enemyTurn(Player player, Monster monster) {
+		System.out.println(monster.getName() + " chose to attack...");
+		if (generateInt(0, 1) == 0) {
+			System.out.println(
+					monster.getName() + " attack was successful! You were" + " hit for " + monster.getAttackValue());
+			monster.monsterTurn(player);
+		} else
+			System.out.println(monster.getName() + " missed!");
+	}
+
 	public static int generateInt(int low, int high) {
 		return ((int) ((Math.random() * 1000000000) % ((high + 1) - low)) + low);
+	}
+
+	// battle menu options for player on player turn
+	public static int playerBattleOptions() {
+		int choice;
+		@SuppressWarnings("resource")
+		Scanner sc = new Scanner(System.in);
+		System.out.println("What will you do?\n1.Attack\n2.Run away\nChoice: ");
+		choice = sc.nextInt();
+		return choice;
 	}
 
 	// player's actions
@@ -64,26 +85,6 @@ public class BattleSystem {
 			System.exit(0);
 			break;
 		}
-	}
-
-	// enemy's actions
-	public static void enemyTurn(Player player, Monster monster) {
-		System.out.println(monster.getName() + " chose to attack...");
-		if (generateInt(0, 1) == 0) {
-			System.out.println(
-					monster.getName() + " attack was successful! You were" + " hit for " + monster.getAttackValue());
-			monster.monsterTurn(player);
-		} else
-			System.out.println(monster.getName() + " missed!");
-	}
-
-	// battle menu options for player on player turn
-	public static int playerBattleOptions() {
-		int choice;
-		Scanner sc = new Scanner(System.in);
-		System.out.println("What will you do?\n1.Attack\n2.Run away\nChoice: ");
-		choice = sc.nextInt();
-		return choice;
 	}
 
 }

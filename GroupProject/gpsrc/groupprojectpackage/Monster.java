@@ -17,6 +17,12 @@ public class Monster extends Entity {
 			setMaxHealth(10);
 			setAttackValue(3);
 			break;
+		case ("Mimic"):
+			setName(name);
+			setHealth(25);
+			setMaxHealth(25);
+			setAttackValue(6);
+			break;
 		default:
 			break;
 		}

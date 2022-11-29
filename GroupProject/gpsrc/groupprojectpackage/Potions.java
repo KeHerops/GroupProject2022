@@ -1,19 +1,21 @@
 package groupprojectpackage;
 
-public class Potions {
-	private static int basicHealthPotionValue = 5;
-
-	private static String bhp = "Basic Health Potion";
-
-	private Potions() {
+public class Potions extends Item{
+	
+	private int healingValue = 5;
+	
+	Potions(){
+		
+		setName("Basic Healing Potion");
+		setItemDescription("Heals for 5 HP");
+		
 	}
 
-	public static int getBasicHealthPotionValue() {
-		return basicHealthPotionValue;
+	public int getHealingValue() {
+		return healingValue;
 	}
-
-	public static String getBHP() {
-		return bhp;
-	}
+	
+	
+	
 
 }
