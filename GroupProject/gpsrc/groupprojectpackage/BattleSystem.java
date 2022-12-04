@@ -62,7 +62,7 @@ public class BattleSystem {
 		int choice;
 		@SuppressWarnings("resource")
 		Scanner sc = new Scanner(System.in);
-		System.out.println("What will you do?\n1.Attack\n2.Run away\nChoice: ");
+		System.out.println("What will you do?\n1. Attack\n2. Use Item\n3. Run away\nChoice: ");
 		choice = sc.nextInt();
 		return choice;
 	}
@@ -80,6 +80,21 @@ public class BattleSystem {
 				System.out.println("but you missed :/");
 			break;
 		case 2:
+			if(player.inventory.isEmpty())
+			{
+				player.displayInventory();
+				break;
+			}
+			System.out.println("Select an Item would you like to use: ");
+			player.displayInventory();
+			Scanner sc = new Scanner(System.in);
+			System.out.println("Choice: ");
+			choice = sc.nextInt();
+			player.useItem(choice);
+			System.out.println("Player: " + player.getHealth());
+			player.displayInventory();
+			break;
+		case 3:
 			System.out.println("You ran away...");
 			System.exit(0);
 			break;

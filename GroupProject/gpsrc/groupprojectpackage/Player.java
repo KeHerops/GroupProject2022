@@ -41,6 +41,10 @@ public class Player extends Entity {
 			inventory.remove(item);
 		}
 	}
+	
+	public void useItem(int choice) {
+		useItem((Potions) inventory.get(choice-1));
+	}
 
 	public boolean isFull() {
 		if (inventory.size() == DEFAULT_INVENTORY_SIZE) {

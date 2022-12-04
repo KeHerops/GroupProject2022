@@ -63,6 +63,11 @@ public class GroupProjectClass {
 		// BattleSystem.Battle(p, enemy);
 		//Events.battleEvent(p, enemy, GameStrings.getBattleDescription1_1());
 		//Events.somethingShiny(p);
+		p.addItem(potion);
+		p.addItem(potion);
+		p.addItem(potion);
+		p.addItem(potion);
+		p.addItem(potion);
 		Levels levels = new Levels();
 		levels.LEVEL_ZERO(p);
 		
