@@ -69,7 +69,8 @@ public class GroupProjectClass {
 		p.addItem(potion);
 		p.addItem(potion);
 		Levels levels = new Levels();
-		levels.LEVEL_ZERO(p);
+		//levels.LEVEL_ZERO(p);
+		Events.wordGame(p);
 		
 		
 		System.out.println("Testing has ended");
