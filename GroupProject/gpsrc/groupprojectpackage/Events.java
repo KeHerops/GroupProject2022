@@ -92,11 +92,12 @@ public class Events {
 		char[] wordRevealArray= new char[word.length()];
 		for(int i=0;i<wordRevealArray.length;i++)
 			wordRevealArray[i]='#';
-		System.out.println();
 		while(rounds < 7)
 		{
 			for(char d:wordRevealArray)
 				System.out.print(d);
+			System.out.println("\nAnswer: ");
+
 			wordHolder=sc.nextLine();
 			wordHolder=wordHolder.toUpperCase();
 			char[] wordHolderArray=wordHolder.toCharArray();
@@ -106,7 +107,7 @@ public class Events {
 				{
 					if(wordHolderArray[j]==(wordArray[i]))
 					{
-						wordRevealArray[i]=wordHolderArray[j];
+						wordRevealArray[i]=wordArray[i];
 					}
 				}
 			}
