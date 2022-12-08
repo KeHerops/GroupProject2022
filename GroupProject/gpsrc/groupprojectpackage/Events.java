@@ -80,6 +80,8 @@ public class Events {
 	}
 
 	public static void wordGame(Player player) {
+		int rounds=0;
+		boolean playerWon = false;
 		String word = wordGameWordRandomizer();
 		String description=wordGameWordDescription(word);
 		String wordHolder;
@@ -88,19 +90,49 @@ public class Events {
 		System.out.println(description);
 		Scanner sc = new Scanner(System.in);
 		char[] wordRevealArray= new char[word.length()];
-		for(char c:wordRevealArray)
-			wordRevealArray[c]='*';
-		for(char c:wordRevealArray)
-			System.out.print(c);
-		wordHolder=sc.nextLine();
-		wordHolder=wordHolder.toUpperCase();
-		char[] wordHolderArray=wordHolder.toCharArray();
+		for(int i=0;i<wordRevealArray.length;i++)
+			wordRevealArray[i]='#';
+		System.out.println();
+		while(rounds < 7)
+		{
+			for(char d:wordRevealArray)
+				System.out.print(d);
+			wordHolder=sc.nextLine();
+			wordHolder=wordHolder.toUpperCase();
+			char[] wordHolderArray=wordHolder.toCharArray();
+			for(int i=0;i<wordArray.length;i++)
+			{
+				for(int j=0;j<wordHolderArray.length;j++)
+				{
+					if(wordHolderArray[j]==(wordArray[i]))
+					{
+						wordRevealArray[i]=wordHolderArray[j];
+					}
+				}
+			}
+			if(wordHolder.equals(word)) {
+				System.out.println("Yay you did it. you got it right.");
+				break;
+			}
+			else if(wordRevealArray.equals(wordArray))
+			{
+				System.out.println("The world was revealed! it was "+ word);
+				playerWon=true;
+			}
+			else
+				System.out.println("You got it wrong");
+			
+			
+		}
 		
-		if(wordHolder.equals(word)) {
-			System.out.println("Yay you did it. you got it right.");
+		if(rounds < 7|| playerWon==true)
+		{
+			System.out.println("You get a potion");
 		}
 		else
-			System.out.println("You got it wrong");
+		{
+			System.out.println("You lose");
+		}
 		
 		
 	}
